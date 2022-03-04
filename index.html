@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<style>
+html
+{
+    background-image: url(https://i.pinimg.com/originals/5c/f2/66/5cf2660af5f4214def7166dc7a7c8062.jpg);
+    background-color: #000033;
+    color: yellow;
+}
+
+main
+{
+    padding: 2vh 8vw 2vh 8vw;
+    width: 85vw;
+    height: auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+#title
+{
+    text-align: center;
+    font-size: 5vmax;
+    margin-bottom: 1vmin;
+}
+
+#description
+{
+    font-size: 2vmax;
+}
+
+#survey-form
+{
+    background-image: url("https://www.pixeden.com/media/k2/galleries/220/005-wood-melamine-subttle-pattern-background-pat.jpg");
+    border-radius: 1vmin;
+    padding: 2vh 2vw 2vh 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 80vw;
+    height: auto;
+    box-shadow: -1vmax 1vmax 5vmax 2vmin magenta;
+    font-size: 2.5vmin;
+    margin-top: 2vmax;
+    
+}
+
+#name-label, #email-label, #number-label, #sex
+{
+    width: 80%;
+    height: auto;
+    padding: 1%;
+    text-align: center;
+}
+
+#name, #email, #number, #dropdown
+{
+    background-color: indigo;
+    border-width: 5%;
+    border-color: red;
+    border-style:solid;
+    border-radius: 50px;
+    color: yellow;   
+    width: 80%;
+    padding: 2vh 2% 2vh 2%;
+    margin-left: 2%;
+    font-size: 90%;
+}
+
+#name:focus, #email:focus, #number:focus, #dropdown:focus
+{
+    animation-name: select;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    outline: none;
+}
+
+
+@keyframes select
+{
+    0%
+    {
+        border-color: red;
+    }
+
+    100%
+    {
+        border-color: cyan;
+    }
+}
+
+#rad, #chbox
+{
+    margin: 1vmax 5vmax 1vmax 5vmax;
+    width: 80%;
+    border: none;
+}
+
+#rad legend, #chbox legend
+{
+    text-align: center;
+}
+
+.click
+{
+    
+    width: 20px;
+    height: 20px;
+}
+
+#comment
+{
+    resize: none;
+    background-color: indigo;
+    color:yellow;
+    width: 80%;
+    height: auto;
+    font-size: 90%;
+}
+
+#com h6
+{
+    font-size: 100%;
+}
+
+#com
+{
+    margin: 0% 10% 5% 10%;
+    width: 80%;
+}
+legend
+{
+    font-weight: bold;
+    margin: 3% 0% 3% 0%;
+}
+
+#submit
+{
+    width: 30%;
+    padding: 1% 5% 1% 5%;
+    background-color: green;
+    color: white;
+    border: 10% solid transparent;
+    border-radius: 50px;
+    outline:none;
+    box-shadow: none;
+}
+
+#submit:hover
+{
+    animation-name: register;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes register 
+{
+    0%
+    {
+        border-color: transparent;
+    }    
+
+    100%
+    {
+        border-color: aqua;
+    }
+}
+
+
+</style>
+
+<html>
+<head>
+    <title>Login Form</title>
+</head>
+
+<body>
+    <main>
+        <header id = "pageheader">
+            <h1 id = "title">Register</h1>
+            <p id = "description">Please fill in this form to register</p>
+        </header>
+
+        <form id = "survey-form" action = "">
+            <label id = "name-label" for = "name">
+                Name
+                <input id = "name" type = "name"  placeholder="John Doe" required>
+            </label>
+
+            <label id = "email-label" for = "email">
+                Email
+                <input id = "email" type = "email" placeholder = "example@domain.com" required>
+            </label>
+
+            <label id = "number-label" for = "number">
+                Age
+                <input id = "number" type = "number" placeholder = "Age" required min = 0 max = 120>
+            </label>
+
+            <label id = "sex" for = "dropdown">
+                Gender
+                <select id = "dropdown" value = "gender" >
+                    <option value = "Male">Male</option>
+                    <option value = "Female">Female</option>
+                    <option value = "Other">Other</option>
+                </select>
+            </label>
+
+            <fieldset id = "rad">
+                <legend>What is your profession?</legend>
+                
+                <label for = "option1">
+                    <input class = "click" type = "radio" id = "option1" name = "profession" value = "employed" required>
+                    Employed
+                </label>
+                <br>
+                <label for = "option2">
+                    <input class = "click" type = "radio" id = "option2" name = "profession" value = "unemployed">
+                    Unemployed
+                </label>
+                <br>
+                <label for = "option3">
+                    <input class = "click" type = "radio" id = "option3" name = "profession" value = "student">
+                    Student
+                </label>
+                <br>
+                <label for = "option4">
+                    <input class = "click" type = "radio" id = "option4" name = "profession" value = "self-employed">
+                    Self-Employed
+                </label>
+
+            </fieldset>
+
+            <fieldset id = "chbox">
+                <legend>Why do you want to register to this website? You can choose multiple reasons:</legend>
+
+                <label for = "o1">
+                    <input class = "click" type = "checkbox" id = "o1" name = "reason" value = "learn">
+                    To learn
+                </label>
+                <br>
+                <label for = "o2">
+                    <input class = "click" type = "checkbox" id = "o2" name = "reason" value = "interact">
+                    To interact with other learners
+                </label>
+                <br>
+                <label for = "o3">
+                    <input class = "click" type = "checkbox" id = "o3" name = "reason" value = "teach">
+                    To teach
+                </label>
+                <br>
+                <label for = "o4">
+                    <input class = "click" type = "checkbox" id = "o5" name = "reason" value = "help">
+                    To help other learners
+                </label>
+                <br>
+                <label for = "o5">
+                    <input class = "click" type = "checkbox" id = "o5" name = "reason" value = "other">
+                    Other
+                </label>
+            </fieldset>
+
+            <label id = "com" for = "comment">
+                <h6>Do you have additional comments?</h6>
+                <textarea id = "comment" name = "additional_comments" rows = 10 cols = 100></textarea> 
+            </label>
+
+                <button type = "submit" id = "submit">
+                    <p style = "color: white; font-size: 150%;"><b>Register</b></p>
+                </button>
+            
+        </form>
+
+    </main>
+</body>
+</html>
